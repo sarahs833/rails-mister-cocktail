@@ -1,0 +1,21 @@
+
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">Cocktail bar</a>
+  <form class="form-inline">
+    <%= link_to "Add new cocktail", new_cocktail_path, class: "button-ghost" %>
+  </form>
+</nav>
+
+<div class="card-container">
+  <div class="row justify-content-center">
+  <% @cocktails.each do |cocktail| %>
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body" class="col-xs-12 col-sm-4">
+        <p class="card-text"><%=cocktail.name%></p>
+        <%= link_to "check here for more info", cocktail_path(cocktail.id), class: "button-ghost" %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
