@@ -2,13 +2,46 @@
   border-radius: 6px;
   padding:5px;
   color:rgb(250,250,250);
-  font-size: 10px;
+  font-size: 14px;
   margin-right:15px;
-  background-color:#eb8242
+  background-color:#3e64ff;
 }
 
 .button-ghost:hover {
   text-decoration: none;
   color:rgb(300,300,300);
-  background: linear-gradient(to top right, #FFFFFF, #eb8242 50%, #da2d2d);
+  background: linear-gradient(to top right, #494ca2, #8186d5 50%, #5edfff);
 }
+
+.card-body {
+  padding: 60px;
+}
+
+.card {
+  margin:10px;
+  margin-top:20px;
+  border-radius:4px;
+  opacity: 0.8;
+}
+
+input {
+
+  border-radius: 6px;
+  padding:5px;
+  color:rgb(250,250,250);
+  font-size: 14px;
+  margin-right:15px;
+  background-color:#3e64ff;
+  margin-bottom: 20px;
+}
+
+.dose-inline {
+      display: flex;
+    justify-content: center;
+    margin:20px;
+}
+
+.dose-inline > div {
+  margin:20px;
+}
+

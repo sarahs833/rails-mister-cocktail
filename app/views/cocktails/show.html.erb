@@ -1,21 +1,27 @@
 
 <div class="card-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1559443922-3f698a0ff27a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);height:800px">
+  <div id="icon">
+    <p>home page</p>
+    <%= link_to root_path do%><i class="fas fa-home"></i><% end %>
+  </div>
   <div class="container">
-    <h2 class="color-white"><%= @cocktail.name %></h2>
+    <h1 class="color-white"><%= @cocktail.name %></h1>
+     <div class="dose-inline">
+      <div>
+        <h4 class="color-white">Ingredient list</h4>
+          <% @cocktail.ingredients.each do |ingredient|  %>
+        <p class="color-white"><%=ingredient.name %> </p>
+          <% end %>
+        </div>
+      <div >
+        <h4 class="color-white">Description <%= link_to new_cocktail_dose_path(@cocktail.id) do%><i class="fas fa-plus-square"></i><% end %></h4>
 
-    <h6 class="color-white">Ingredient list</h6>
-      <% @cocktail.ingredients.each do |ingredient|  %>
-    <p class="color-white"><%=ingredient.name %> </p>
-      <% end %>
-
-    <h6 class="color-white">Description</h6>
-      <%@cocktail.doses.each do |dose|%>
-    <p class="color-white"><%= dose.description %> <%= link_to "Delete", dose_path(dose.id),method: :delete, data: { confirm: "Are you sure?" } %></p>
-       <% end %>
-       <div class="row justify-content-center">
-         <%= link_to "Add a ingredient", new_cocktail_dose_path(@cocktail.id), class: "button-ghost"  %>
-         <%= link_to "Back to home page", root_path,class: "button-ghost"%>
-       </div>
+        <%@cocktail.doses.each do |dose|%>
+      <p class="color-white"><%= dose.description %> <%= link_to dose_path(dose.id),method: :delete, data: { confirm: "Are you sure?" } do%><i class="far fa-trash-alt"></i>
+        <% end %> </p>
+        <% end %>
+         </div>
+      </div>
   </div>
 </div>
 
