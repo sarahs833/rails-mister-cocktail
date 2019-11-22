@@ -1,18 +1,25 @@
 
-<h2><%= @cocktail.name %></h2>
+<div class="card-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1559443922-3f698a0ff27a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);height:800px">
+  <div class="container">
+    <h2 class="color-white"><%= @cocktail.name %></h2>
 
-<h5>Ingredient list</h5>
-<% @cocktail.ingredients.each do |ingredient|  %>
-<p><%=ingredient.name %> </p>
-<% end %>
+    <h6 class="color-white">Ingredient list</h6>
+      <% @cocktail.ingredients.each do |ingredient|  %>
+    <p class="color-white"><%=ingredient.name %> </p>
+      <% end %>
+
+    <h6 class="color-white">Description</h6>
+      <%@cocktail.doses.each do |dose|%>
+    <p class="color-white"><%= dose.description %> <%= link_to "Delete", dose_path(dose.id),method: :delete, data: { confirm: "Are you sure?" } %></p>
+       <% end %>
+       <div class="row justify-content-center">
+         <%= link_to "Add a ingredient", new_cocktail_dose_path(@cocktail.id), class: "button-ghost"  %>
+         <%= link_to "Back to home page", cocktails_path,class: "button-ghost"%>
+       </div>
+  </div>
+</div>
 
 
-<h5>Description</h5>
- <%@cocktail.doses.each do |dose|%>
-<p><%= dose.description %>    <%= link_to "Delete", dose_path(dose.id),method: :delete %></p>
- <% end %>
 
-<hr>
-<%= link_to "Add a ingredient", new_cocktail_dose_path(@cocktail.id)  %>
-<hr>
-<%= link_to "Back to home page", cocktails_path %>
+
+
