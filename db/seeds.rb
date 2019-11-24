@@ -20,11 +20,22 @@ end
 puts "We have created #{Ingredient.count} ingredients!"
 
 Cocktail.destroy_all
-
-Cocktail.create(name: "Vesper")
-Cocktail.create(name: "Lemon twist")
-Cocktail.create(name: "Negroni")
-Cocktail.create(name: "Rose")
+url_1 ="https://res.cloudinary.com/dyaa1wcat/image/upload/v1574410325/download_2_q3u4u3.jpg"
+url_2 = "https://res.cloudinary.com/dyaa1wcat/image/upload/v1574410317/download_1_cns1js.jpg"
+url_3 = "https://res.cloudinary.com/dyaa1wcat/image/upload/v1574410311/download_g9vbly.jpg"
+url_4 = "https://res.cloudinary.com/dyaa1wcat/image/upload/v1574410302/ab4a0c63-62ff-481c-9dd5-5044d9e9a08b--vesper-cocktail_food52_mark_weinberg_14-11-18_0063_cttv7t.jpg"
+cocktail = Cocktail.new(name: "Vesper")
+cocktail.remote_photo_url = url_1
+cocktail.save
+cock = Cocktail.new(name: "Lemon twist")
+cock.remote_photo_url = url_2
+cock.save
+coc = Cocktail.new(name: "Negroni")
+coc.remote_photo_url = url_3
+coc.save
+co =Cocktail.new(name: "Rose")
+co.remote_photo_url = url_4
+co.save
 
 puts "We have created #{Cocktail.count} cocktails"
 
