@@ -33,7 +33,7 @@ cock.save
 coc = Cocktail.new(name: "Negroni")
 coc.remote_photo_url = url_3
 coc.save
-co =Cocktail.new(name: "Rose")
+co = Cocktail.new(name: "Rose")
 co.remote_photo_url = url_4
 co.save
 
