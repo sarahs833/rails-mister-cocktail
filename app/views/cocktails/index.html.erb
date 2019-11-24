@@ -9,8 +9,12 @@
 <div class="card-container">
     <% @cocktails.each_with_index do |cocktail, index| %>
       <div class="cards">
-          <%= image_tag("drink#{index}.jpg")%>
-
+         <% if cocktail.photo.present? %>
+           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+           </div>
+          <% else %>
+            <%= image_tag("drink#{index}.jpg")%>
+          <% end %>
         <h4 class="card-text mb-4"><%=cocktail.name%></h4>
         <%= link_to "check here for more info", cocktail_path(cocktail.id), class: "button-ghost" %>
       </div>
