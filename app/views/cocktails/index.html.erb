@@ -9,10 +9,11 @@
 <div class="card-container">
     <% @cocktails.each_with_index do |cocktail, index| %>
       <div class="cards">
+          <%= image_tag("drink#{index}.jpg")%>
 
-        <%= image_tag("drink#{index}.jpg")%>
         <h4 class="card-text mb-4"><%=cocktail.name%></h4>
         <%= link_to "check here for more info", cocktail_path(cocktail.id), class: "button-ghost" %>
       </div>
     <% end %>
 </div>
+

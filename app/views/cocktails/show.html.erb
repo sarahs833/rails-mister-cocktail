@@ -6,6 +6,10 @@
   </div>
   <div class="container">
     <h1 class="color-white"><%= @cocktail.name %></h1>
+      <% if @cocktail.photo.present? %>
+          <%= cl_image_tag(@cocktail.photo,
+        width: 400, height: 300, crop: :fill) %>
+        <% end %>
      <div class="dose-inline">
       <div class="align-left">
         <h4 class="color-white">Ingredient list</h4>
