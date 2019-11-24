@@ -1,5 +1,5 @@
 
-<div class="card-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1559443922-3f698a0ff27a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);height:800px">
+<div class="card-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1559443922-3f698a0ff27a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);height:800px">
   <div id="icon">
     <p>home page</p>
     <%= link_to root_path do%><i class="fas fa-home"></i><% end %>
@@ -7,13 +7,13 @@
   <div class="container">
     <h1 class="color-white"><%= @cocktail.name %></h1>
      <div class="dose-inline">
-      <div>
+      <div class="align-left">
         <h4 class="color-white">Ingredient list</h4>
           <% @cocktail.ingredients.each do |ingredient|  %>
         <p class="color-white"><%=ingredient.name %> </p>
           <% end %>
         </div>
-      <div >
+      <div class="align-left">
         <h4 class="color-white">Description <%= link_to new_cocktail_dose_path(@cocktail.id) do%><i class="fas fa-plus-square"></i><% end %></h4>
 
         <%@cocktail.doses.each do |dose|%>
