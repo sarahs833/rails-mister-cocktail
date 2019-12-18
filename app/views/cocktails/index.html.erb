@@ -1,15 +1,35 @@
 
 <div class="container">
   <div class="navbar">
-    <div class="form-inline">
-      <a class="navbar-brand text-primary">Cocktail bar</a>
-      <div>
+    <div class="text">
+      <p>Save your soul</p>
+      <h2>Choose a drink</h2>
+      <!-- <a class="navbar-brand text-primary">Cocktail bar</a> -->
+      <!-- <div>
         <%= link_to "Add new cocktail", new_cocktail_path, class: "button-ghost" %>
-      </div>
+      </div> -->
     </div>
   </div>
 
-  <div class="card-container">
+
+  <div class="cards">
+    <% @cocktails.each_with_index do |cocktail, index| %>
+      <% if cocktail.photo.present? %>
+        <div class="card-category">
+             <%= cl_image_tag(cocktail.photo,
+              width: 280, height: 280, crop: :fill) %>
+              <% else %>
+             <%= cl_image_tag("#{cocktail.photo}",
+               width: 400, height: 300, crop: :fill) %>
+            <% end %>
+            <h4 class="card-text"><%=cocktail.name%></h4>
+            <p>Click me for more infos</p>
+        </div>
+    <% end %>
+  </div>
+
+
+<!--   <div class="card-container">
       <% @cocktails.each_with_index do |cocktail, index| %>
         <div class="cards">
            <% if cocktail.photo.present? %>
@@ -23,7 +43,7 @@
           <%= link_to "check here for more info", cocktail_path(cocktail.id), class: "button-ghost" %>
         </div>
     <% end %>
-  </div>
+  </div> -->
 </div>
 
 
