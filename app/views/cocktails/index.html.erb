@@ -1,25 +1,29 @@
 
-<nav class="navbar navbar-light bg-dark">
-  <a class="navbar-brand text-primary">Cocktail bar</a>
-  <form class="form-inline">
-    <%= link_to "Add new cocktail", new_cocktail_path, class: "button-ghost" %>
-  </form>
-</nav>
-
-<div class="card-container">
-    <% @cocktails.each_with_index do |cocktail, index| %>
-      <div class="cards">
-         <% if cocktail.photo.present? %>
-           <%= cl_image_tag(cocktail.photo,
-            width: 280, height: 280, crop: :fill) %>
-           <% else %>
-           <%= cl_image_tag("#{cocktail.photo}",
-             width: 400, height: 300, crop: :fill) %>
-          <% end %>
-        <h4 class="card-text mb-4"><%=cocktail.name%></h4>
-        <%= link_to "check here for more info", cocktail_path(cocktail.id), class: "button-ghost" %>
+<div class="container">
+  <div class="navbar">
+    <div class="form-inline">
+      <a class="navbar-brand text-primary">Cocktail bar</a>
+      <div>
+        <%= link_to "Add new cocktail", new_cocktail_path, class: "button-ghost" %>
       </div>
+    </div>
+  </div>
+
+  <div class="card-container">
+      <% @cocktails.each_with_index do |cocktail, index| %>
+        <div class="cards">
+           <% if cocktail.photo.present? %>
+             <%= cl_image_tag(cocktail.photo,
+              width: 280, height: 280, crop: :fill) %>
+             <% else %>
+             <%= cl_image_tag("#{cocktail.photo}",
+               width: 400, height: 300, crop: :fill) %>
+            <% end %>
+          <h4 class="card-text mb-4"><%=cocktail.name%></h4>
+          <%= link_to "check here for more info", cocktail_path(cocktail.id), class: "button-ghost" %>
+        </div>
     <% end %>
+  </div>
 </div>
 
 
