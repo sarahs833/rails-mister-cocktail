@@ -46,10 +46,26 @@ body {
 .card-category {
   box-shadow:1px 1px 3px rgba(0,0,0,0.2);
   text-align:center;
+  color: #465881;
+}
+
+.card-customize {
+  box-shadow:1px 1px 3px rgba(0,0,0,0.2);
+  text-align:center;
+  color: #465881;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  background-color: #deb881;
+  color:white
 }
 
 .card-category > h4{
   font-weight: bold;
+}
+
+.card-category > p:hover{
+  color:#ec9b3b;
 }
 
 // Smallest device
