@@ -35,14 +35,17 @@ input {
   margin-bottom: 20px;
 }
 
-.dose-inline {
-      display: flex;
-    justify-content: center;
-    margin:20px;
-   padding-left: 150px;
-}
 
-.dose-inline > div {
+.image-card {
+  text-align: center;
+}
+.dose-inline {
   margin:20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.align-left{
+  margin:10px
 }
 
