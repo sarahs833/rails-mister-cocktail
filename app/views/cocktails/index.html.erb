@@ -23,12 +23,20 @@
                width: 400, height: 300, crop: :fill) %>
             <% end %>
             <h4 class="card-text"><%=cocktail.name%></h4>
-            <p>Click me for more infos</p>
+            <p class="link"><%= link_to "Click me for more infos", cocktail_path(cocktail.id)%></p>
         </div>
     <% end %>
     <div class="card-customize">
-      <h4>Add your customize cocktail</h4>
+      <h4><%= link_to "Add your new cocktail", new_cocktail_path %></h4>
     </div>
+  </div>
+
+  <div class="footer">
+    <ul class="icon">
+      <a href="#"><i class="fab fa-weixin"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </ul>
   </div>
 
 

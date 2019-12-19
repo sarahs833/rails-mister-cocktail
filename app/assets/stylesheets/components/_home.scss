@@ -56,17 +56,45 @@ body {
   display:flex;
   justify-content:center;
   align-items: center;
-  background-color: #deb881;
+  background-color: #000000;
   color:white
+}
+
+
+.card-customize:hover{
+  opacity:0.8
 }
 
 .card-category > h4{
   font-weight: bold;
 }
 
-.card-category > p:hover{
-  color:#ec9b3b;
+a:link{
+  color:#465881;
+  text-decoration: none;
 }
+a:visited{
+  color:#465881;
+}
+a:hover{
+  opacity: 0.7;
+  text-decoration:none
+}
+.footer {
+    width:100vw;
+    background-color: #313131;
+    color: white;
+    margin-top: 40px;
+    padding: 30px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.icon > a {
+  margin:10px;
+  color:white
+}
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
