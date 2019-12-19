@@ -2,9 +2,9 @@
   <div id="icon">
     <%= link_to root_path do%><i class="fas fa-home"></i><% end %>
   </div>
-  <hr>
-  <hr>
-  <hr>
+  <div class="white-text">
+    <h2>Add your cocktail</h2>
+  </div>
    <div class="search-bar">
     <%= simple_form_for(@cocktail) do |f| %>
       <%=f.input :name %>
