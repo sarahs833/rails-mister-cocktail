@@ -22,7 +22,7 @@ const toggle = () => {
   icon.addEventListener('click',switchVisible);
   function switchVisible(event) {
     bigDiv.classList.remove('navbar');
-    bigDiv.classList.add('switched');
+    bigDiv.classList.add('overlay-nav-open');
   }
 }
 
