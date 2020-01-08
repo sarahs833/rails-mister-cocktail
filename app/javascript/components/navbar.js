@@ -16,4 +16,15 @@ const initUpdateNavbarOnScroll = () => {
   }
 }
 
+const toggle = () => {
+  const icon = document.querySelector('#nav-icon span');
+  const bigDiv = document.querySelector('.navbar');
+  icon.addEventListener('click',switchVisible);
+  function switchVisible(event) {
+    bigDiv.classList.remove('navbar');
+    bigDiv.classList.add('switched');
+  }
+}
+
+export { toggle } ;
 export { initUpdateNavbarOnScroll };
